@@ -1,0 +1,40 @@
+<html>
+<title> santosh infinity </title>
+<head>
+<style>
+html { background: #333 }
+body { text-align: center }
+
+svg {
+        max-width: 25em;
+        border-radius: 3px;
+        box-shadow: 2px 2px 5px #000;
+        background: #111;
+        fill: none;
+        stroke: #222;
+        stroke-linecap: round;
+        stroke-width: 8%
+}
+
+use {
+        stroke: #fff;
+        animation: a 2s linear infinite
+}
+
+@keyframes a { to { stroke-dashoffset: 0px } }
+</style>
+</head>
+<body>
+- var r = 500;
+- var w = 8*r, h = .7*w, x = -.5*w, y = -.5*h;
+- var c = Math.round(r/Math.SQRT2);
+- var l = Math.ceil((3.1*Math.PI + 2.5)*r);
+- var d = ~~(Math.PI*d);
+
+svg(viewBox=[x, y, w, h].join(' '))
+        path#inf(d=`M${c}${-c}A${r} ${r} 0 1 1 ${c} ${c}L${-c}${-c}A${r} 
+${r} 0 1 0${-c} ${c}z`)
+        use(xlink:href='#inf' stroke-dasharray=`${d} ${l - d}` 
+stroke-dashoffset=`${l}px`)
+</body>
+</html>
